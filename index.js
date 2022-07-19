@@ -44,7 +44,7 @@ app.get('/login', (req, res) => {
         scope: scope,
         redirect_uri: REDIRECT_URI,
         state: state
-    }).toString();
+    });
     res.redirect(`https://accounts.spotify.com/authorize?${queryParams}`);
 });
 
@@ -54,12 +54,12 @@ app.get('/callback', (req, res) => {
         grant_type: 'authorization_code',
         code: code,
         redirect_uri: REDIRECT_URI
-    });
+    }).toString();
 
     axios({
         method: 'post',
         url: 'https://accounts.spotify.com/api/token',
-        data: data.toString(),
+        data: data,
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
             Authorization: `Basic ${new Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64')}`,
@@ -67,20 +67,21 @@ app.get('/callback', (req, res) => {
       }).then(response => {
         if (response.status === 200) {
             // Get the Spotify profile for the logged in user
-            const { access_token, token_type } = response.data;
-
-            axios.get('https://api.spotify.com/v1/me', {
-                headers: {
-                    Authorization: `${token_type} ${access_token}`
-                }
-            }).then(response => {
-                res.send(`<pre>${JSON.stringify(response.data, null, 2)}</pre>`);
-            }).catch(error => {
-                res.send(error);
+            const { access_token, refresh_token } = response.data;
+            const queryParams = new URLSearchParams({
+                access_token,
+                refresh_token
             });
+
+            // Redirect to app
+            res.redirect(`http://localhost:3000/?${queryParams}`)
         }
         else {
-            res.send(response);
+            const errorParam = new URLSearchParams({
+                error: 'invalid_token'
+            }).toString();
+
+            res.redirect(`/?${error}`);
         }
       }).catch(error => {
             res.send(error);
