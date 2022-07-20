@@ -1,41 +1,26 @@
 import { useState, useEffect } from 'react';
-import { accessToken, logout, getUserProfile } from './utils/spotify';
+import { accessToken, logout } from './utils/spotify';
+import Login from './pages/Login';
+import Profile from './pages/Profile';
 
 const App = () => {
   const [token, setToken] = useState(null);
-  const [profile, setProfile] = useState(null);
 
   useEffect(() => {
     setToken(accessToken);
-
-    const fetchData = async () => {
-      try {
-        const response = await getUserProfile();
-        setProfile(response.data);
-      } 
-      catch(err) {
-        console.error(err);
-      }
-    }
-
-    fetchData();
   }, []);
 
   return (
     <div>
       {!token ? (
-        <a href="http://localhost:8888/login">
-          Log in to Spotify
-        </a>
+        <Login />
         ) : (
           <div>
-            <h1>Logged in</h1>
+            <Profile/>
+            {/* TODO: Move this button */}
             <button onClick={logout}>Log out</button>
-            {profile && (
-                <h1>Hi {profile.display_name}</h1>
-            )}
           </div>
-        )}
+      )}
     </div>
   );
 }
