@@ -67,10 +67,11 @@ app.get('/callback', (req, res) => {
       }).then(response => {
         if (response.status === 200) {
             // Get the Spotify profile for the logged in user
-            const { access_token, refresh_token } = response.data;
+            const { access_token, refresh_token, expires_in } = response.data;
             const queryParams = new URLSearchParams({
                 access_token,
-                refresh_token
+                refresh_token,
+                expires_in
             });
 
             // Redirect to app
@@ -79,7 +80,7 @@ app.get('/callback', (req, res) => {
         else {
             const errorParam = new URLSearchParams({
                 error: 'invalid_token'
-            }).toString();
+            });
 
             res.redirect(`/?${error}`);
         }
