@@ -1,8 +1,9 @@
 import styled from 'styled-components/macro';
 
 const StyledLoginLink = styled.a`
-    background-color: green;
-    color: #fff;
+    background-color: var(--green);
+    color: var(--white);
+    font-weight: 700;
     padding: 10px 20px;
     margin: 20px auto;
     border-radius: 30px;
