@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { accessToken, logout } from './utils/spotify';
+import GlobalStyle from './styles/GlobalStyle';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 
@@ -12,6 +13,8 @@ const App = () => {
 
   return (
     <div>
+      <GlobalStyle />
+
       {!token ? (
         <Login />
         ) : (
