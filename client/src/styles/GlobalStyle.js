@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
         font-family: var(--font-main);
         font-size: var(--font-size-md);
-        color: var(--white);
+        color: var(--black);
         background-color: var(--lightgrey);
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
@@ -60,6 +60,12 @@ const GlobalStyle = createGlobalStyle`
         &:hover, &:focus {
             background-color: rgba(0, 0, 0, 0.9);
         }
+    }
+
+    img {
+        width: 100%;
+        max-width: 100%;
+        vertical-align: middle;
     }
 `;
 

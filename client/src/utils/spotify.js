@@ -93,5 +93,8 @@ export const accessToken = getAccessToken();
 axios.defaults.headers['Authorization'] = `Bearer ${accessToken}`;
 axios.defaults.headers['Content-Type'] = 'application/json';
 
-// Fetch profile data for logged in user
 export const getUserProfile = () => axios.get('https://api.spotify.com/v1/me');
+
+export const getUserPlaylists = (limit = 10) => axios.get(`https://api.spotify.com/v1/me/playlists?limit=${limit}`);
+
+export const getUserTopAritsts = (timeRange = 'long_term') => axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}`);

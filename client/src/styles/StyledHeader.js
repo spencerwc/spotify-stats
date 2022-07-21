@@ -5,6 +5,7 @@ const StyledHeader = styled.header`
     position: relative;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
     background-color: var(--grey);
+    color: var(--white);
     max-height: 500px;
     min-height: 250px;
 
