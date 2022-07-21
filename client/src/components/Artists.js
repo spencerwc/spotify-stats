@@ -13,7 +13,7 @@ const Artists = ({ artists }) => {
                                         <img src={artist.images[0].url} alt={artist.name} />    
                                     </div>
                                 )}
-                                <h3 className="item-name">{artist.name}</h3>
+                                <strong className="item-name">{artist.name}</strong>
                             </div>
                         </li>
                     ))}

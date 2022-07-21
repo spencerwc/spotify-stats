@@ -11,7 +11,7 @@ const StyledList = styled.ul`
         background-color: var(--lightgrey);
         transition: background-color 0.3s ease;
         border-bottom: 1px solid var(--dark-grey);
-        padding: var(--spacing-md) 0;
+        padding: var(--spacing-md) var(--spacing-xs);
 
         &:last-child {
             border-bottom: none;
@@ -25,23 +25,36 @@ const StyledList = styled.ul`
     .item-inner {
         display: flex;
         align-items: center;
+        overflow: hidden;
     }
 
     .item-image {
         position: relative;
         margin-right: var(--spacing-md);
+        flex-shrink: 0;
 
         img {
-            width: 70px;
-            max-width: 80px;
+            width: 100%;
+            max-width: 60px;
             background-color: var(--dark-grey);
             border-radius: ${props => props.type === 'artist' ? '50%' : '2px'};
         }
     }
 
+    .item-data {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        flex-shrink: 0;
+    }
+
     .item-name {
         margin: 0;
         font-size: var(--font-size-md);
+    }
+
+    .item-meta {
+        font-size: var(--font-size-sm);
     }
 `;
 

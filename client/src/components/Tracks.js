@@ -1,6 +1,7 @@
 import StyledList from "../styles/StyledList";
 
 const Tracks = ({ tracks }) => {
+    console.log(tracks);
     return (
         <> 
             {tracks && tracks.length > 0 ? (
@@ -13,7 +14,10 @@ const Tracks = ({ tracks }) => {
                                         <img src={track.album.images[0].url} alt={track.name} />    
                                     </div>
                                 )}
-                                <h3 className="item-name">{track.name}</h3>
+                                <div className="item-data">
+                                    <strong className="item-name">{track.name}</strong>
+                                    <span className="item-meta">{track.artists[0].name} - {track.album.name.slice(0, 45)} {track.album.name.length > 45 && '...'}</span>
+                                </div>
                             </div>
                         </li>
                     ))}

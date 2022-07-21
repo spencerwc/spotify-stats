@@ -1,10 +1,27 @@
 import { useState, useEffect } from 'react';
 import { getUserProfile, getUserPlaylists, getUserTopAritsts, getUserTopTracks } from '../utils/spotify';
+import styled from 'styled-components/macro';
 import StyledHeader from '../styles/StyledHeader';
 import SpotifyIcon from '../images/Spotify_Icon_RGB_Green.png';
 import Section from '../components/Section';
 import Artists from '../components/Artists';
 import Tracks from '../components/Tracks';
+
+const StyledGrid = styled.div`
+    display: grid;
+    grid-template-columns: 100%;
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-md);
+
+    @media (min-width: 600px) {
+         grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 768px) {
+        padding: var(--spacing-md) var(--spacing-xxl);
+    }
+`;
 
 const Profile = () => {
     const [profile, setProfile] = useState(null);
@@ -56,22 +73,21 @@ const Profile = () => {
                     </StyledHeader>
                 </>
             )}
+            <main>
+                <StyledGrid>
+                    {topArtists && (
+                        <Section title="Top Artists" seeAllLink="/artists">
+                            <Artists artists={topArtists.items.slice(0, 5)} />
+                        </Section>
+                    )}
 
-            {topArtists && (
-                <main>
-                    <Section title="Top Artists" seeAllLink="/artists">
-                        <Artists artists={topArtists.items.slice(0, 5)} />
-                    </Section>
-                </main>
-            )}
-
-            {topTracks && (
-                <main>
-                    <Section title="Top Tracks" seeAllLink="/tracks">
-                        <Tracks tracks={topTracks.items.slice(0, 5)} />
-                    </Section>
-                </main>
-            )}
+                    {topTracks && (
+                        <Section title="Top Tracks" seeAllLink="/tracks">
+                            <Tracks tracks={topTracks.items.slice(0, 5)} />
+                        </Section>
+                    )}
+                </StyledGrid>
+            </main>
         </>
     );
 };
