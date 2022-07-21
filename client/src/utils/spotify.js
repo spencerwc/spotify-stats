@@ -98,3 +98,5 @@ export const getUserProfile = () => axios.get('https://api.spotify.com/v1/me');
 export const getUserPlaylists = (limit = 10) => axios.get(`https://api.spotify.com/v1/me/playlists?limit=${limit}`);
 
 export const getUserTopAritsts = (timeRange = 'long_term') => axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}`);
+
+export const getUserTopTracks = (timeRange = 'long_term') => axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=${timeRange}`);

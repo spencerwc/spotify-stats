@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
-import { getUserProfile, getUserPlaylists, getUserTopAritsts } from '../utils/spotify';
+import { getUserProfile, getUserPlaylists, getUserTopAritsts, getUserTopTracks } from '../utils/spotify';
 import StyledHeader from '../styles/StyledHeader';
 import SpotifyIcon from '../images/Spotify_Icon_RGB_Green.png';
 import Section from '../components/Section';
 import Artists from '../components/Artists';
+import Tracks from '../components/Tracks';
 
 const Profile = () => {
     const [profile, setProfile] = useState(null);
     const [playlists, setPlaylists] = useState(null);
     const [topArtists, setTopArtists] = useState(null);
+    const [topTracks, setTopTracks] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -19,8 +21,11 @@ const Profile = () => {
                 const playlists = await getUserPlaylists();
                 setPlaylists(playlists.data);
 
-                const topArtists = await getUserTopAritsts();
-                setTopArtists(topArtists.data);
+                const artists = await getUserTopAritsts();
+                setTopArtists(artists.data);
+
+                const tracks = await getUserTopTracks();
+                setTopTracks(tracks.data);
             } 
             catch(err) {
                 console.error(err);
@@ -56,6 +61,14 @@ const Profile = () => {
                 <main>
                     <Section title="Top Artists" seeAllLink="/artists">
                         <Artists artists={topArtists.items.slice(0, 5)} />
+                    </Section>
+                </main>
+            )}
+
+            {topTracks && (
+                <main>
+                    <Section title="Top Tracks" seeAllLink="/tracks">
+                        <Tracks tracks={topTracks.items.slice(0, 5)} />
                     </Section>
                 </main>
             )}
