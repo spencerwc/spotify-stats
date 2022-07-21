@@ -3,7 +3,11 @@ import { css } from "styled-components";
 const variables = css`
     :root {
         --white: #ffffff;
+        --black: #191414;
         --green: #1DB954;
+        --light-grey: #b3b3b3;
+        --grey: #535353;
+        --dark-grey: #282828;
 
         --font-main: 'Lato', sans-serif;
         --font-acc: 'Montserrat', sans-serif;

@@ -24,7 +24,9 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100%;
         overflow-x: hidden;
         font-family: var(--font-main);
-        font-size: var(--fz-md);
+        font-size: var(--font-size-md);
+        color: var(--white);
+        background-color: var(--lightgrey);
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
     }
@@ -41,6 +43,23 @@ const GlobalStyle = createGlobalStyle`
 
     a {
         text-decoration: none;
+    }
+
+    button {
+        cursor: pointer;
+        font-family: var(--font-acc);
+        color: var(--white);
+        font-size: var(--font-size-sm);
+        font-weight: 700;
+        background-color: rgba(0, 0, 0, .5);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--border-radius-pill);
+        border: none;
+        outline: none;
+
+        &:hover, &:focus {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
     }
 `;
 
