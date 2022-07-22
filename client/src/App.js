@@ -9,6 +9,7 @@ import GlobalStyle from './styles/GlobalStyle';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import TopArtists from './pages/TopArtists';
+import TopTracks from './pages/TopTracks';
 import styled from 'styled-components/macro';
 
 const StyledLogoutButton = styled.button`
@@ -42,7 +43,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Profile />} />
                     <Route path="artists" element={<TopArtists />} />
-                    <Route path="tracks" element={<h1>Top Tracks</h1>} />
+                    <Route path="tracks" element={<TopTracks />} />
                     <Route path="playlists" element={<h1>Playlists</h1>} />
                     <Route path="/playlists/:playlistId" element={<h1>Playlist</h1>} />
                 </Routes>

@@ -14,7 +14,7 @@ const StyledSection = styled.section`
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: stretch;
-        margin-bottom: var(--spacing-xl);
+        margin-bottom: var(--spacing-md);
     }
 
     .section-heading {

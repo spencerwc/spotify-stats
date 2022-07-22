@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
-import { getUserTopAritsts } from '../utils/spotify';
+import { getUserTopTracks } from '../utils/spotify';
 import Section from '../components/Section';
 import RangeButtons from '../components/RangeButtons';
-import Artists from '../components/Artists';
+import Tracks from '../components/Tracks';
 
-const TopArtists = () => {
-    const [topArtists, setTopArtists] = useState(null);
+const TopTracks = () => {
+    const [topTracks, setTopTracks] = useState(null);
     const [range, setRange] = useState('long_term');
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const artists = await getUserTopAritsts(range);
-                setTopArtists(artists.data);
+                const tracks = await getUserTopTracks(range);
+                setTopTracks(tracks.data);
             } 
             catch(err) {
                 console.error(err);
@@ -24,15 +24,15 @@ const TopArtists = () => {
 
     return (
         <main>
-            <Section title="Top Artists">
+            <Section title="Top Tracks">
             <RangeButtons range={range} setRange={setRange} />
-            
-            {topArtists && (
-                <Artists artists={topArtists.items} />
+
+            {topTracks && topTracks.items && (
+                <Tracks tracks={topTracks.items} />
             )}
             </Section>
         </main>
     );
-}
+};
 
-export default TopArtists;
+export default TopTracks;

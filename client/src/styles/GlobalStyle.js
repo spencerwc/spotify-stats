@@ -51,14 +51,14 @@ const GlobalStyle = createGlobalStyle`
         color: var(--white);
         font-size: var(--font-size-sm);
         font-weight: 700;
-        background-color: rgba(0, 0, 0, .5);
+        background-color: var(--dark-grey);
         padding: var(--spacing-xs) var(--spacing-sm);
         border-radius: var(--border-radius-pill);
         border: none;
         outline: none;
 
         &:hover, &:focus {
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: var(--grey);
         }
     }
 
