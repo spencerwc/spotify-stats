@@ -10,7 +10,7 @@ const Artists = ({ artists }) => {
                             <div className="item-inner">
                                 {artist.images[0] && (
                                     <div className="item-image">
-                                        <img src={artist.images[0].url} alt={artist.name} />    
+                                        <img src={artist.images[2].url} alt={artist.name} />    
                                     </div>
                                 )}
                                 <strong className="item-name">{artist.name}</strong>

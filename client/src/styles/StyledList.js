@@ -34,8 +34,9 @@ const StyledList = styled.ul`
         flex-shrink: 0;
 
         img {
-            width: 100%;
-            max-width: 60px;
+            width: 64px;
+            height: 64px;
+            min-width: 60px;
             background-color: var(--dark-grey);
             border-radius: ${props => props.type === 'artist' ? '50%' : '2px'};
         }

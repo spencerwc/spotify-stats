@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getUserProfile, getUserPlaylists, getUserTopAritsts, getUserTopTracks } from '../utils/spotify';
 import styled from 'styled-components/macro';
 import StyledHeader from '../styles/StyledHeader';
-import SpotifyIcon from '../images/Spotify_Icon_RGB_Green.png';
+import SpotifyLogo from '../images/Spotify_logo.svg';
 import Section from '../components/Section';
 import Artists from '../components/Artists';
 import Tracks from '../components/Tracks';
@@ -57,7 +57,7 @@ const Profile = () => {
                 <>
                     <StyledHeader type="user">
                         <div className="header-inner">
-                            <img className="header-img" src={profile.images[0] && profile.images[0].url ? profile.images[0].url : SpotifyIcon} alt="Avatar"/>
+                            <img className="header-img" src={profile.images[0] && profile.images[0].url ? profile.images[0].url : SpotifyLogo} alt="Avatar"/>
                             <div className="header-details">
                                 <h1 className="header-name">{profile.display_name}</h1>
                                 <p className="header-meta">

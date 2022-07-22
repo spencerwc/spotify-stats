@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import StyledSection from '../styles/StyledSection';
 
-const Section = ({ children, title, seeAllLink, breadcrumb }) => (
+const Section = ({ children, title, seeAllLink }) => (
     <StyledSection>
         <div className="section-inner">
             <div className="section-top">
