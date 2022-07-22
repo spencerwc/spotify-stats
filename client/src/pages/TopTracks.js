@@ -3,6 +3,7 @@ import { getUserTopTracks } from '../utils/spotify';
 import Section from '../components/Section';
 import RangeButtons from '../components/RangeButtons';
 import Tracks from '../components/Tracks';
+import Loader from '../components/Loader';
 
 const TopTracks = () => {
     const [topTracks, setTopTracks] = useState(null);
@@ -23,15 +24,18 @@ const TopTracks = () => {
     }, [range]);
 
     return (
-        <main>
-            <Section title="Top Tracks">
-            <RangeButtons range={range} setRange={setRange} />
-
-            {topTracks && topTracks.items && (
-                <Tracks tracks={topTracks.items} />
+        <>
+            {topTracks ? (
+                <main style={{padding: '55px 0'}}>
+                    <Section title="Top Tracks">
+                        <RangeButtons range={range} setRange={setRange} />
+                        <Tracks tracks={topTracks.items} />
+                    </Section>
+                </main>
+            ) : (
+                <Loader />
             )}
-            </Section>
-        </main>
+        </>
     );
 };
 

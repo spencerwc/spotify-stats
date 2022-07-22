@@ -44,8 +44,6 @@ const App = () => {
                     <Route path="/" element={<Profile />} />
                     <Route path="artists" element={<TopArtists />} />
                     <Route path="tracks" element={<TopTracks />} />
-                    <Route path="playlists" element={<h1>Playlists</h1>} />
-                    <Route path="/playlists/:playlistId" element={<h1>Playlist</h1>} />
                 </Routes>
             </BrowserRouter>
           </>

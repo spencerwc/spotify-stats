@@ -1,12 +1,15 @@
 import styled from 'styled-components/macro';
 
 const StyledSection = styled.section`
+    margin: 0 var(--spacing-md);
     .section-inner {
         width: 100%;
-        max-width: var(--site-max-width);
+        max-width: 1100px;
         margin: 0 auto;
         position: relative;
-        padding: var(--spacing-lg) var(--spacing-md);
+        padding: var(--spacing-lg);
+        border-radius: var(--border-radius-subtle);
+        background-color: var(--grey);
     }
 
     .section-top {
@@ -20,13 +23,11 @@ const StyledSection = styled.section`
     .section-heading {
         margin: 0;
         font-size: var(--font-size-lg);
-        color: var(--black);
     }
 
     .section-see-all {
         display: flex;
         align-items: center;
-        color: var(--black);
         font-family: var(--font-acc);
         font-size: var(--font-size-md);
         font-weight: 700;

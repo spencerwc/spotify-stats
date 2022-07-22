@@ -3,26 +3,12 @@ import styled from "styled-components/macro";
 const StyledHeader = styled.header`
     display: flex;
     position: relative;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
-    background-color: var(--grey);
-    color: var(--white);
     max-height: 500px;
     min-height: 250px;
 
     @media (min-width: 768px) {
         height: 20vh;
         min-height: 340px;
-    }
-
-    &:after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 20vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.3), transparent);
-        position: absolute;
-        top: 100%;
-        z-index: -1;
     }
 
     .header-inner {
@@ -82,6 +68,7 @@ const StyledHeader = styled.header`
         display: flex;
         align-items: center;
         font-size: var(--font-size-md);
+        color: var(--off-white);
         margin: 0;
 
         span {
@@ -92,8 +79,8 @@ const StyledHeader = styled.header`
                 content: '•';
                 display: block;
                 margin: 0 var(--spacing-xs);
-                color: var(--light-grey);
-                font-size: 8px;
+                color: var(--off-white);
+                font-size: var(--font-size-xs);
             }
         }
     }

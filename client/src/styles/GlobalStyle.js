@@ -25,8 +25,8 @@ const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
         font-family: var(--font-main);
         font-size: var(--font-size-md);
-        color: var(--black);
-        background-color: var(--lightgrey);
+        color: var(--white);
+        background-color: var(--dark-grey);
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
     }
@@ -51,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
         color: var(--white);
         font-size: var(--font-size-sm);
         font-weight: 700;
-        background-color: var(--dark-grey);
+        background-color: var(--black);
         padding: var(--spacing-xs) var(--spacing-sm);
         border-radius: var(--border-radius-pill);
         border: none;

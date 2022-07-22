@@ -10,12 +10,7 @@ const StyledList = styled.ul`
     .item {
         background-color: var(--lightgrey);
         transition: background-color 0.3s ease;
-        border-bottom: 1px solid var(--dark-grey);
         padding: var(--spacing-md) var(--spacing-xs);
-
-        &:last-child {
-            border-bottom: none;
-        }
 
         &:hover, &:focus {
             background-color: rgba(0, 0, 0, 0.05);
@@ -26,6 +21,7 @@ const StyledList = styled.ul`
         display: flex;
         align-items: center;
         overflow: hidden;
+        letter-spacing: 0.03rem;
     }
 
     .item-image {
@@ -52,10 +48,15 @@ const StyledList = styled.ul`
     .item-name {
         margin: 0;
         font-size: var(--font-size-md);
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .item-meta {
         font-size: var(--font-size-sm);
+        color: var(--off-white);
     }
 `;
 

@@ -2,12 +2,13 @@ import { css } from "styled-components";
 
 const variables = css`
     :root {
-        --white: #ffffff;
+        --white: #E4E6EB;
+        --off-white: #B0B3B8;
         --black: #191414;
         --green: #1DB954;
-        --light-grey: #b3b3b3;
-        --grey: #535353;
-        --dark-grey: #282828;
+        --light-grey: #3A3B3C;
+        --grey: #242526;
+        --dark-grey: #18191A;
 
         --font-main: 'Lato', sans-serif;
         --font-acc: 'Montserrat', sans-serif;
