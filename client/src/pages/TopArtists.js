@@ -26,7 +26,7 @@ const TopArtists = () => {
     return (
         <>
             {topArtists ? (
-                <main style={{padding: '55px 0'}}>
+                <main style={{padding: '100px 0'}}>
                     <Section title="Top Artists">
                         <RangeButtons range={range} setRange={setRange} />
                         <Artists artists={topArtists.items} />
