@@ -67,6 +67,13 @@ const GlobalStyle = createGlobalStyle`
         max-width: 100%;
         vertical-align: middle;
     }
+
+    main {
+        padding: 90px var(--spacing-md) var(--spacing-md) var(--spacing-md);
+        min-height: 100vh;
+        max-width: var(--site-max-width);
+        margin: 0 auto;
+    }
 `;
 
 export default GlobalStyle;

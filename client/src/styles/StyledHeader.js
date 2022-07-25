@@ -1,14 +1,14 @@
 import styled from "styled-components/macro";
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.section`
     display: flex;
     position: relative;
-    max-height: 500px;
     min-height: 250px;
+    margin-top: var(--spacing-md);
 
     @media (min-width: 768px) {
-        height: 20vh;
-        min-height: 340px;
+        min-height: 200px;
+        margin-bottom: var(--spacing-xl);
     }
 
     .header-inner {
@@ -17,14 +17,12 @@ const StyledHeader = styled.header`
         align-items: center;
         max-width: var(--site-max-width);
         margin: 0 auto;
-        padding: var(--spacing-xxl) var(--spacing-md);
 
         @media (min-width: 768px) {
             flex-direction: row;
             align-items: flex-end;
             width: 100%;
             margin: 0 auto;
-            padding: var(--spacing-xl) var(--spacing-xxl);
         }
     }
 

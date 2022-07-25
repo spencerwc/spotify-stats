@@ -33,7 +33,7 @@ const variables = css`
         --border-radius-subtle: 4px;
         --border-radius-pill: 30px;
 
-        --site-max-width: 1300px;
+        --site-max-width: 1100px;
     }
 `;
 

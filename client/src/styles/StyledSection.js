@@ -1,7 +1,6 @@
 import styled from 'styled-components/macro';
 
 const StyledSection = styled.section`
-    margin: 0 var(--spacing-md);
     .section-inner {
         width: 100%;
         max-width: 1100px;

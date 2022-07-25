@@ -26,7 +26,7 @@ const TopTracks = () => {
     return (
         <>
             {topTracks ? (
-                <main style={{padding: '100px 0'}}>
+                <main>
                     <Section title="Top Tracks">
                         <RangeButtons range={range} setRange={setRange} />
                         <Tracks tracks={topTracks.items} />

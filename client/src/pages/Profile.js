@@ -14,14 +14,12 @@ const StyledGrid = styled.div`
     gap: var(--spacing-md);
     max-width: var(--site-max-width);
     margin: 0 auto;
-    padding: var(--spacing-md);
 
     @media (min-width: 768px) {
          grid-template-columns: 1fr 1fr;
     }
 
     @media (min-width: 768px) {
-        padding: var(--spacing-md) var(--spacing-xxl);
     }
 `;
 
@@ -56,7 +54,7 @@ const Profile = () => {
     return (
         <>
             {profile ? (
-                <>
+                <main>
                     <StyledHeader type="user">
                         <div className="header-inner">
                             <img className="header-img" src={profile.images[0] && profile.images[0].url ? profile.images[0].url : SpotifyLogo} alt="Avatar"/>
@@ -73,22 +71,21 @@ const Profile = () => {
                             </div>
                         </div>
                     </StyledHeader>
-                    <main>
-                        <StyledGrid>
-                            {topArtists && (
-                                <Section title="Top Artists" seeAllLink="/artists">
-                                    <Artists artists={topArtists.items.slice(0, 5)} />
-                                </Section>
-                            )}
+                    <StyledGrid>
+                        {topArtists && (
+                            <Section title="Top Artists" seeAllLink="/artists">
+                                <Artists artists={topArtists.items.slice(0, 5)} />
+                            </Section>
+                        )}
 
-                            {topTracks && (
-                                <Section title="Top Tracks" seeAllLink="/tracks">
-                                    <Tracks tracks={topTracks.items.slice(0, 5)} />
-                                </Section>
-                            )}
-                        </StyledGrid>
-                    </main>
-                </> ) : (
+                        {topTracks && (
+                            <Section title="Top Tracks" seeAllLink="/tracks">
+                                <Tracks tracks={topTracks.items.slice(0, 5)} />
+                            </Section>
+                        )}
+                    </StyledGrid>
+                </main> 
+                ) : (
                 <Loader />
                 )
             }

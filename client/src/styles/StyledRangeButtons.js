@@ -3,11 +3,14 @@ import styled from 'styled-components/macro';
 const StyledRangeButtons = styled.ul`
     display: flex;
     list-style: none;
-    margin: 0 0 var(--spacing-sm) 0;
+    margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
     padding: 0;
 
     @media (min-width: 768px) {
-        right: var(--spacing-xxl);
+        position: absolute;
+        right: var(--spacing-md);
+        top: var(--spacing-lg);
+        margin: 0;
     }
 
     li {
