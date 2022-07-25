@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getUserTopAritsts } from '../utils/spotify';
+import { getUserTopArtists } from '../utils/spotify';
 import Section from '../components/Section';
 import RangeButtons from '../components/RangeButtons';
 import Artists from '../components/Artists';
@@ -12,7 +12,7 @@ const TopArtists = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const artists = await getUserTopAritsts(range);
+                const artists = await getUserTopArtists(range);
                 setTopArtists(artists.data);
             } 
             catch(err) {

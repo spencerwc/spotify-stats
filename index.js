@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-    const scope = 'user-read-private user-read-email user-top-read';
+    const scope = 'user-read-private user-read-email user-top-read user-follow-read';
     const state = generateRandomString(16);
     res.cookie(stateKey, state);
 

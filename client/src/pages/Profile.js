@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getUserProfile, getUserPlaylists, getUserTopAritsts, getUserTopTracks } from '../utils/spotify';
+import { getUserProfile, getUserPlaylists, getUserTopArtists, getUserFollowedArtists, getUserTopTracks } from '../utils/spotify';
 import styled from 'styled-components/macro';
 import StyledHeader from '../styles/StyledHeader';
 import SpotifyLogo from '../images/Spotify_logo.svg';
@@ -18,9 +18,6 @@ const StyledGrid = styled.div`
     @media (min-width: 768px) {
          grid-template-columns: 1fr 1fr;
     }
-
-    @media (min-width: 768px) {
-    }
 `;
 
 const Profile = () => {
@@ -33,12 +30,13 @@ const Profile = () => {
         const fetchData = async () => {
             try {
                 const user = await getUserProfile();
-                setProfile(user.data);
-
+                const following = await getUserFollowedArtists();
+                setProfile({...user.data, followingCount: following.data.artists.items.length});
+                
                 const playlists = await getUserPlaylists();
                 setPlaylists(playlists.data);
 
-                const artists = await getUserTopAritsts();
+                const artists = await getUserTopArtists();
                 setTopArtists(artists.data);
 
                 const tracks = await getUserTopTracks();
@@ -50,6 +48,7 @@ const Profile = () => {
         }
         fetchData();
     }, []);
+
 
     return (
         <>
@@ -66,6 +65,9 @@ const Profile = () => {
                                     )}
                                     <span>
                                         {profile.followers.total} Follower{profile.followers.total !== 1 ? 's' : ''}
+                                    </span>
+                                    <span>
+                                        {profile.followingCount ? profile.followingCount : '0'} Following
                                     </span>
                                 </p>
                             </div>
