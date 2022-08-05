@@ -101,6 +101,8 @@ export const getUserTopArtists = (timeRange = 'long_term') => axios.get(`https:/
 
 export const getUserFollowedArtists = () => axios.get(`https://api.spotify.com/v1/me/following?type=artist`);
 
+export const getArtist = (id) => axios.get(`https://api.spotify.com/v1/artists/${id}`);
+
 export const getUserTopTracks = (timeRange = 'long_term') => axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=${timeRange}`);
 
 export const getTrack = (trackId) => axios.get(`https://api.spotify.com/v1/tracks/${trackId}`);

@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const FeatureChart = ({ features }) => {
     const featureData = [
@@ -36,9 +36,9 @@ const FeatureChart = ({ features }) => {
         <ResponsiveContainer width="100%" height={400}>
             <BarChart data={featureData}>
                 <CartesianGrid strokeDasharray="2 2" />
-                <XAxis dataKey="type" style={{color: '#fff'}}/>
+                <XAxis dataKey="type" />
                 <YAxis dataKey="value" />
-                <Tooltip contentStyle={{color: '#000'}}/>
+                <Tooltip contentStyle={{backgroundColor: '#000'}}/>
                 <Bar dataKey="value" fill="var(--green)" />
             </BarChart>
         </ResponsiveContainer>

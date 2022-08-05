@@ -6,7 +6,7 @@ import Loader from "../components/Loader";
 import FeatureChart from "../components/FeatureChart";
 import Section from "../components/Section";
 
-const StyledTrackDetails = styled.div`
+const StyledTrackDetails = styled.section`
         padding-top: var(--spacing-sm);
         display: flex;
         flex-direction: column;
@@ -73,7 +73,7 @@ const Track = () => {
             {track ? (
                 <main>
                     <StyledTrackDetails>
-                        <img className="album-art" src={track.album.images[0].url} alt="album art" />
+                        <img className="album-art" src={track.album.images[1].url} alt="album art" />
                         <div className="track-details">
                             <h1>{track.name}</h1>
                             <h2 className="track-artists">

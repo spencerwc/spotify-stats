@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Profile from './pages/Profile';
 import TopArtists from './pages/TopArtists';
+import Artist from './pages/Artist';
 import TopTracks from './pages/TopTracks';
 import Track from './pages/Track';
 
@@ -32,6 +33,7 @@ const App = () => {
           <Routes>
               <Route path="/" element={<Profile />} />
               <Route path="artists" element={<TopArtists />} />
+              <Route path="artists/:id" element={<Artist />} />
               <Route path="tracks" element={<TopTracks />} />
               <Route path="tracks/:id" element={<Track />} />
           </Routes>
