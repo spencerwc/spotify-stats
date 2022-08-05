@@ -2,24 +2,33 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getTrack, getTrackAudioFeatures } from "../utils/spotify";
 import styled from "styled-components/macro";
-import Section from "../components/Section";
 import Loader from "../components/Loader";
+import FeatureChart from "../components/FeatureChart";
+import Section from "../components/Section";
 
 const StyledTrackDetails = styled.div`
+        padding-top: var(--spacing-sm);
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: var(--spacing-md);
         max-width: var(--site-max-width);
         text-align: center;
+        margin-bottom: var(--spacing-lg);
 
         @media (min-width: 768px) {
             gap: var(--spacing-xxl);
             text-align: left;
+            flex-direction: row;
         }
 
         .album-art {
             width: 100%;
             max-width: 300px;
+            margin: 0 auto;
+
+            @media (min-width: 768px) {
+                margin: 0;
+            }
         }
 
         .track-artists {
@@ -76,6 +85,12 @@ const Track = () => {
                             <a className="listen-button" href={track.external_urls.spotify} target="_blank" rel="noreferrer">Listen on Spotify</a>
                         </div>
                     </StyledTrackDetails>
+                    
+                    { features && (
+                        <Section title="Track Features">
+                            <FeatureChart features={features} />
+                        </Section>
+                    )}
                 </main> 
                 ) : (
                 <Loader />
