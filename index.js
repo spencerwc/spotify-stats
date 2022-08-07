@@ -2,11 +2,15 @@ require('dotenv').config()
 const axios = require('axios');
 const express = require('express');
 const app = express();
-const port = 8888;
+const path = require('path');
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI;
+const FRONTEND_URI = process.env.FRONTEND_URI;
+const PORT = process.env.PORT || 8888;
+
+app.use(express.static(path.resolve(__dirname, './client/build')));
 
 /**
  * Generates a random string containing numbers and letters
@@ -75,7 +79,7 @@ app.get('/callback', (req, res) => {
             });
 
             // Redirect to app
-            res.redirect(`http://localhost:3000/?${queryParams}`)
+            res.redirect(`${FRONTEND_URI}?${queryParams}`)
         }
         else {
             const errorParam = new URLSearchParams({
@@ -111,6 +115,10 @@ app.get('/refresh_token', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`Listening to http://localhost:${port}`);
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+});
+
+app.listen(PORT, () => {
+    console.log(`Listening to http://localhost:${PORT}`);
 });

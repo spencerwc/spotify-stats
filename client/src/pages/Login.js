@@ -20,10 +20,16 @@ const StyledContainer = styled.main`
     }
 `;
 
+const LOGIN_URI = 
+    process.env.NODE_ENV !== 'production' ?
+        'http://localhost:8888/login' :
+        'https://spotify-stats-v1.herokuapp.com/login';
+
+
 const Login = () => {
     return (
         <StyledContainer>
-             <a href="http://localhost:8888/login" className="login-link">
+             <a href={LOGIN_URI} className="login-link">
                 Log in to Spotify
             </a>
         </StyledContainer>
