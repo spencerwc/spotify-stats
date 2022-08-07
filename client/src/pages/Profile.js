@@ -16,7 +16,8 @@ const StyledGrid = styled.div`
     margin: 0 auto;
 
     @media (min-width: 768px) {
-         grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
     }
 `;
 

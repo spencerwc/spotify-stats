@@ -4,11 +4,14 @@ const StyledHeader = styled.section`
     display: flex;
     position: relative;
     min-height: 250px;
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
 
     @media (min-width: 768px) {
         min-height: 200px;
-        margin-bottom: var(--spacing-xl);
+        margin-top: var(--spacing-xxl);
+        margin-bottom: var(--spacing-xxl);
+        padding-left: var(--spacing-lg);
     }
 
     .header-inner {
@@ -20,15 +23,14 @@ const StyledHeader = styled.section`
 
         @media (min-width: 768px) {
             flex-direction: row;
-            align-items: flex-end;
             width: 100%;
             margin: 0 auto;
         }
     }
 
     img.header-img {
-        width: 20%;
-        max-width: 150px;
+        width: 30%;
+        max-width: 200px;
         min-width: 120px;
         background-color: var(--black);
         border-radius: ${props => props.type === 'user' ? '50%' : '0'};
@@ -52,7 +54,7 @@ const StyledHeader = styled.section`
     }
 
     h1.header-name {
-        font-size: clamp(var(--font-size-xxl), 10vw, var(--font-size-xxxl));
+        font-size: clamp(3rem, 10vw, 5rem);
         font-weight: 900;
         line-height: 1;
         margin: 0 0 var(--spacing-md) 0;
