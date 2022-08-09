@@ -4,11 +4,15 @@
   </a>
 </p> 
 <p align="center">
-  View your top artists, tracks, and track-specific audio features with your Spotify account.
+  View your top artists and tracks, and discover track-specific audio features with your Spotify account.
 </p>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/84942739/183273192-26925231-77b9-40d2-a101-d121f4d78de9.png" />
+  <img src="https://user-images.githubusercontent.com/84942739/183583166-67638a33-90bf-443b-bfc3-ba9bc18e3c2e.png" />
 </p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/84942739/183583263-063c8661-13f4-4cc7-8415-2d54dc66129e.png" />
+</p>
+
 
 ## Set up Spotify integration
 
